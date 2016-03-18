@@ -18,7 +18,7 @@ public class ChanceTest {
     }
 
     @Test
-    public void chance_cant_be_created_with_value_lesser_than_0() throws InvalidProbabilityException {
+    public void chance_cannot_be_created_with_value_lesser_than_0() throws InvalidProbabilityException {
         thrown.expect(InvalidProbabilityException.class);
         thrown.expectMessage("Probability should be between 0 to 1");
         Chance.create(-2);
@@ -31,14 +31,14 @@ public class ChanceTest {
     }
 
     @Test
-    public void chance_can_be_multiplied() throws InvalidProbabilityException {
+    public void chances_can_be_multiplied() throws InvalidProbabilityException {
         Chance chance = Chance.create(0.75);
         Chance chance1 = Chance.create(0.25);
         Chance expected = Chance.create(0.1875);
         assertEquals(expected,chance.and(chance1));
     }
     @Test
-    public void chance_can_be_added() throws InvalidProbabilityException {
+    public void chances_can_be_added() throws InvalidProbabilityException {
         Chance chance = Chance.create(0.75);
         Chance chance1 = Chance.create(0.25);
         Chance expected = Chance.create(1);
